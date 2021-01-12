@@ -25,18 +25,35 @@
     </style>
 <body>
     <div class="container">  
-        <h2>Card</h2>
-            <div class="card">
-                      <img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.0-9/136714284_3472778786184628_8239700223110815238_o.jpg?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeECrgVpi6ap6cJB1Ue42Vq98Le55CrGdkfwt7nkKsZ2R0kAIa5OlyXPPLrzHt7ZerG8vD7RJ8a9NsHBDjJfhrux&_nc_ohc=2wjI_kRh0WQAX86i9Kh&_nc_ht=scontent.fbkk10-1.fna&oh=b208f8a020be2fc14c53b9bb15e40d84&oe=60223AB3" alt="Avatar" style="width:100%">
-                <div class="container">
-                    <h4><b>John Doe</b></h4> 
-                        <p>Architect & Engineer</p> 
-                </div>
-            </div>    
-            
-    
+       <h2>Card</h2>
+         <div class="card">
+            <img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.0-9/136714284_3472778786184628_8239700223110815238_o.jpg?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeECrgVpi6ap6cJB1Ue42Vq98Le55CrGdkfwt7nkKsZ2R0kAIa5OlyXPPLrzHt7ZerG8vD7RJ8a9NsHBDjJfhrux&_nc_ohc=2wjI_kRh0WQAX86i9Kh&_nc_ht=scontent.fbkk10-1.fna&oh=b208f8a020be2fc14c53b9bb15e40d84&oe=60223AB3" alt="Avatar" style="width:100%">
+              <h4><b>Weather</b></h4>
+                
+          <span id="tbldata"></span>
+          
+  <script>
+   function loadJSONObject(){ 
+     var url ="http://api.openweathermap.org/data/2.5/weather?lat=7.376078&lon=99.743488&appid=a28d46fac268c82a0dc8eabda7fd2b94";
+           $.get(url)
+            .done((data)=>{
+              console.log(data)
+              var line = + data.temp +
+                         + data.weather +
+
+              $("#tbldata").text(JSON.stringify(data));
+            })         
+           .fail((xhr, status, err)=>{
+                    console.log("error")
+                });
+        }
+        $(()=>{
+            loadJSONObject();
+     });
 
 
+  </script>        
+          </div>    
     </div>
 </body>
 </html>
