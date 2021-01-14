@@ -14,35 +14,42 @@
       transition: 0.3s;
       width: 40%;
     }
-    
     .card:hover {
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     }
-    
     .container {
       padding: 2px 16px;
+    }
+    span{
+      padding-left: 20px;
+      
+    }
+    h3{
+      padding-left: 20px;
+      padding-top: 15px;
     }
     </style>
 
 <body>
-    <div class="container">  
+   
+  <div class="container">  
        <h2>Card</h2>
          <div class="card">
             <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="Avatar" style="width:100%">
-              <h4><b>Weather</b></h4>
+              <h3><b>Weather</b></h3>
               <span id="name">Name: </span>
+              <span id="sys_country">Country: </span>
               <span id="main_temp">Temp: </span>
               <span id="main_temp_max">Temp max: </span>
               <span id="main_temp_min">Temp min: </span>
               <span id="humidity">Humidity: </span>
-              <span id="sys_country">Country: </span>
               <span id="sys_sunrise">Sunrise: </span>
               <span id="sys_sunset">Sunset: </span>
               <span id="wind_deg">Wind deg: </span>
               <span id="wind_speed">Wind speed: </span>
               <span id="clouds">Cloud: </span>
               
-              
+            
           
   <script>
    function loadweather(){ 
@@ -61,10 +68,6 @@
                 $("#wind_deg").append(data.wind.deg);
                 $("#wind_speed").append(data.wind.speed);
                 $("#clouds").append(data.clouds.all);
-                
-                
-              
-          
   })         
            .fail((xhr, status, err)=>{
                     console.log("error")
@@ -76,7 +79,7 @@
 
 
   </script>        
-          </div>    
+        </div>    
     </div>
 </body>
 </html>
