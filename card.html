@@ -44,7 +44,7 @@
   <div class="container">  
          <div class="card">
           <h2><b><center>Card</center></b></h2>
-            <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="Avatar" style="width:100%">
+            <img src="https://imganuncios.mitula.net/k_hay_thi_din_n_makxk_h_en_x_khwnk_hnun_5070035606741583667.jpg" alt="Avatar" style="width:100%">
               <h3>Weather my home</h3>
               <span id="name">Name: </span>
               <span id="sys_country">Country: </span>
@@ -86,7 +86,7 @@
 
  <script>
    function loadweather(){ 
-     var url ="http://api.openweathermap.org/data/2.5/weather?lat=7.376078&lon=99.743488&appid=a28d46fac268c82a0dc8eabda7fd2b94";
+     var url ="http://api.openweathermap.org/data/2.5/weather?lat=7.376078&lon=99.743488&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric";
            $.getJSON(url)
             .done((data)=>{
               console.log(data)
@@ -112,7 +112,7 @@
            var a = $("#la").val();
            var b = $("#lo").val();
 
-           url = url + "/data/2.5/weather?lat=" + a + "&lon=" + b +"&appid=a28d46fac268c82a0dc8eabda7fd2b94"; 
+           url = url + "/data/2.5/weather?lat=" + a + "&lon=" + b +"&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric"; 
         
             $.getJSON(url)
             .done((data)=>{
@@ -139,7 +139,9 @@
              $("#lo").val("");   
              location.reload();
     }
-        $(()=>{
+       
+    
+    $(()=>{
             loadweather();
             $("#search").click(searchweather);
             $("#reset").click(reset);  
