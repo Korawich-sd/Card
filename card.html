@@ -12,9 +12,19 @@
     .card {
       background-color :rgb(251, 255, 255);
       box-shadow: 0 4px 8px 0 rgba(99, 96, 255, 0.2);
-      width: 40%;
+      width: 30%;
+      float: left;
+    }
+    .card1 {
+      background-color :rgb(251, 255, 255);
+      box-shadow: 0 4px 8px 0 rgba(99, 96, 255, 0.2);
+      width: 30%;
+      float: right;
     }
     .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(156, 171, 255, 0.2);
+    }
+    .card1:hover {
       box-shadow: 0 8px 16px 0 rgba(156, 171, 255, 0.2);
     }
     .container {
@@ -26,6 +36,10 @@
     h3{
       padding-left: 20px;
       padding-top: 15px;
+    }
+    #lat{
+      margin-left: 20px;
+      margin-top: 15px;
     }
     </style>
 
@@ -47,8 +61,29 @@
               <span id="wind_deg">Wind deg: </span>
               <span id="wind_speed">Wind speed: </span>
               <span id="clouds">Cloud: </span>
-                    
-  <script>
+         </div>
+
+  <div class="card1" >
+     <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="Avatar" style="width:100%">
+            <input type="text" id="lat" placeholder="lat" size="10">
+            <input type="text" id="lon" placeholder="lon" size="10">
+            <button id="search" class="btn-lm btn-primary" >Search</button>
+          <h3>Weather</h3>
+          <span>Name: </span><br>
+          <span>Country: </span><br>
+          <span>Temp: </span><br>
+          <span>Temp max: </span><br>
+          <span>Temp min: </span><br>
+          <span>Humidity: </span><br>
+          <span>Sunrise: </span><br>
+          <span>Sunset: </span><br>
+          <span>Wind deg: </span><br>
+          <span>Wind speed: </span><br>
+          <span>Cloud: </span><br>
+       </div>        
+  </div>   
+ 
+ <script>
    function loadweather(){ 
      var url ="http://api.openweathermap.org/data/2.5/weather?lat=7.376078&lon=99.743488&appid=a28d46fac268c82a0dc8eabda7fd2b94";
            $.getJSON(url)
@@ -72,9 +107,10 @@
         }
         $(()=>{
             loadweather();
+            
      });
    </script>        
-        </div>    
-    </div>
+        
+    
 </body>
 </html>
