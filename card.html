@@ -62,25 +62,26 @@
               <span id="wind_speed">Wind speed: </span>
               <span id="clouds">Cloud: </span>
          </div>
-
+   
   <div class="card1" >
      <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="Avatar" style="width:100%">
             <input type="text" id="lat" placeholder="lat" size="10">
             <input type="text" id="lon" placeholder="lon" size="10">
             <button id="search" class="btn-lm btn-primary" >Search</button>
           <h3>Weather</h3>
-          <span>Name: </span><br>
-          <span>Country: </span><br>
-          <span>Temp: </span><br>
-          <span>Temp max: </span><br>
-          <span>Temp min: </span><br>
-          <span>Humidity: </span><br>
-          <span>Sunrise: </span><br>
-          <span>Sunset: </span><br>
-          <span>Wind deg: </span><br>
-          <span>Wind speed: </span><br>
-          <span>Cloud: </span><br>
-       </div>        
+          <span id="name1">Name: </span><br>
+          <span id="sys_country1">Country: </span><br>
+          <span id="main_temp1">Temp: </span><br>
+          <span id="main_temp_max1">Temp max: </span><br>
+          <span id="main_temp_min1">Temp min: </span><br>
+          <span id="humidity1">Humidity: </span><br>
+          <span id="sys_sunrise1">Sunrise: </span><br>
+          <span id="sys_sunset1">Sunset: </span><br>
+          <span id="wind_deg1">Wind deg: </span><br>
+          <span id="wind_speed1">Wind speed: </span><br>
+          <span id="clouds1">Cloud: </span><br>
+  
+      </div>      
   </div>   
  
  <script>
@@ -100,13 +101,42 @@
                 $("#wind_deg").append(data.wind.deg);
                 $("#wind_speed").append(data.wind.speed);
                 $("#clouds").append(data.clouds.all);
-  })         
+                      })         
            .fail((xhr, status, err)=>{
                     console.log("error")
                 });
-        }
+          }
+          function loadweather1(){ 
+     var url ="http://api.openweathermap.org";
+           var a = $("#lat").val();
+           var b = $("#lon").val();
+
+           url = url + "/data/2.5/weather?lat=" + a + "&lon=" + b +"&appid=a28d46fac268c82a0dc8eabda7fd2b94"; 
+     
+            $.getJSON(url)
+            .done((data)=>{
+              console.log(data)
+                $("#name1").append(data.name);
+                $("#main_temp1").append(data.main.temp);
+                $("#main_temp_max1").append(data.main.temp_max);
+                $("#main_temp_min1").append(data.main.temp_min);
+                $("#humidity1").append(data.main.humidity);
+                $("#sys_country1").append(data.sys.country);
+                $("#sys_sunrise1").append(data.sys.sunrise);
+                $("#sys_sunset1").append(data.sys.sunset);
+                $("#wind_deg1").append(data.wind.deg);
+                $("#wind_speed1").append(data.wind.speed);
+                $("#clouds1").append(data.clouds.all);
+                      })         
+           .fail((xhr, status, err)=>{
+                    console.log("error")
+                });
+          }
+   
+
         $(()=>{
             loadweather();
+            loadweather1();
             
      });
    </script>        
