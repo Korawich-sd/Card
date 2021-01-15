@@ -45,7 +45,7 @@
          <div class="card">
           <h2><b><center>Card</center></b></h2>
             <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="Avatar" style="width:100%">
-              <h3>Weather</h3>
+              <h3>Weather my home</h3>
               <span id="name">Name: </span>
               <span id="sys_country">Country: </span>
               <span id="main_temp">Temp: </span>
@@ -59,27 +59,28 @@
               <span id="clouds">Cloud: </span><br>
          </div>
    
-  <div class="search_weather" >
-    <h2><b><center>Search weather</center></b></h2>
-     <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="Avatar" style="width:100%">
-            <input type="text" id="la" placeholder="lat" size="20" style="margin-top: 15px; margin-left: 15px;">
-            <input type="text" id="lo" placeholder="lon" size="20" >
-            <button id="search" class="btn-lm btn-primary">Search</button>
-            <button id="reset" class="btn-lm btn-danger">Reset</button>
-          <h3>Weather</h3>
-          <div id="dataweather">
-          <span id="name1">Name: </span><br>
-          <span id="sys_country1">Country: </span><br>
-          <span id="main_temp1">Temp: </span><br>
-          <span id="main_temp_max1">Temp max: </span><br>
-          <span id="main_temp_min1">Temp min: </span><br>
-          <span id="humidity1">Humidity: </span><br>
-          <span id="sys_sunrise1">Sunrise: </span><br>
-          <span id="sys_sunset1">Sunset: </span><br>
-          <span id="wind_deg1">Wind deg: </span><br>
-          <span id="wind_speed1">Wind speed: </span><br>
-          <span id="clouds1">Cloud: </span><br><br>
-        </div>
+      <div class="search_weather" >
+        <h2><b><center>Search weather</center></b></h2>
+           <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="Avatar" style="width:100%">
+                <input type="text" id="la" placeholder="lat" size="20" style="margin-top: 15px; margin-left: 15px;">
+                <input type="text" id="lo" placeholder="lon" size="20" >
+                <button id="search" class="btn-lm btn-primary" style="width: 85px;">Search</button>
+                <button id="reset" class="btn-lm btn-danger" style="width: 85px;">Reset</button>
+              
+              <h3>Weather</h3>
+              <div id="dataweather">
+                  <span id="name1">Name: </span><br>
+                  <span id="sys_country1">Country: </span><br>
+                  <span id="main_temp1">Temp: </span><br>
+                  <span id="main_temp_max1">Temp max: </span><br>
+                  <span id="main_temp_min1">Temp min: </span><br>
+                  <span id="humidity1">Humidity: </span><br>
+                  <span id="sys_sunrise1">Sunrise: </span><br>
+                  <span id="sys_sunset1">Sunset: </span><br>
+                  <span id="wind_deg1">Wind deg: </span><br>
+                  <span id="wind_speed1">Wind speed: </span><br>
+                  <span id="clouds1">Cloud: </span><br><br>
+              </div>
       </div>      
   </div>   
 
@@ -136,6 +137,7 @@
     function reset(){
              $("#la").val("");
              $("#lo").val("");   
+             location.reload();
     }
         $(()=>{
             loadweather();
