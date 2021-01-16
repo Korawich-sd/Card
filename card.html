@@ -51,24 +51,27 @@
   <div class="container">  
          <div class="card">
           <h2><b><center>Card</center></b></h2>
+          <input type="text" id="la" placeholder="lat" size="13">
+          <input type="text" id="lo" placeholder="lon" size="13">
+          <button id="search" class="btn btn-primary">Search</button>
           <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="map" style="width:100%">
               <h3>Weather my home</h3>
               <div class="dataweather">      
-              <span id="name">Name: </span><br>
-              <span id="sys_country">Country: </span><br>
+              <p>Name: <span id="name"></span></p>
+              <p>Country: <span id="sys_country"></span></p>
               <span id="main_temp">Temp: </span> Celsius<br>
               <span id="main_temp_max">Temp max: </span> Celsius<br>
               <span id="main_temp_min">Temp min: </span> Celsius<br>
               <span id="humidity">Humidity: </span> %<br>
-              <span id="sys_sunrise">Sunrise: </span><br>
-              <span id="sys_sunset">Sunset: </span><br>
+              <span id="sys_sunrise">Sunrise: </span> unix<br>
+              <span id="sys_sunset">Sunset: </span> unix<br>
               <span id="wind_deg">Wind deg: </span> degree<br>
               <span id="wind_speed">Wind speed: </span> m/s<br>
               <span id="clouds">Cloud: </span> %<br>
             </div>
          </div>
-   
-      <div class="search_weather" >
+    </div>  
+   <!--   <div class="search_weather" >
         <h2><b><center>Search weather</center></b></h2>
                 <input type="text" id="la" placeholder="lat" size="13" style="margin-left: 10px; margin-bottom: 15px;">
                 <input type="text" id="lo" placeholder="lon" size="13" style="margin-left: 10px; margin-right: 10px;" >
@@ -85,14 +88,14 @@
                   <span id="main_temp_max1">Temp max: </span> Celsius<br>
                   <span id="main_temp_min1">Temp min: </span> Celsius<br>
                   <span id="humidity1">Humidity: </span> %<br>
-                  <span id="sys_sunrise1">Sunrise: </span><br>
-                  <span id="sys_sunset1">Sunset: </span><br>
+                  <span id="sys_sunrise1">Sunrise: </span> unix<br>
+                  <span id="sys_sunset1">Sunset: </span> unix<br>
                   <span id="wind_deg1">Wind deg: </span> degree<br>
                   <span id="wind_speed1">Wind speed: </span> m/s<br>
                   <span id="clouds1">Cloud: </span> %<br><br>
               </div>
-      </div>      
-  </div>   
+      </div> -->     
+  
           
  <script> 
    function loadweather(){ 
@@ -119,26 +122,27 @@
           }
    
    function searchweather(){ 
+     
            var url ="http://api.openweathermap.org";
            var a = $("#la").val();
            var b = $("#lo").val();
 
            url = url + "/data/2.5/weather?lat=" + a + "&lon=" + b +"&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric"; 
-        
+           
             $.getJSON(url)
             .done((data)=>{
               console.log(data)
-                $("#name1").append(data.name);
-                $("#main_temp1").append(data.main.temp);
-                $("#main_temp_max1").append(data.main.temp_max);
-                $("#main_temp_min1").append(data.main.temp_min);
-                $("#humidity1").append(data.main.humidity);
-                $("#sys_country1").append(data.sys.country);
-                $("#sys_sunrise1").append(data.sys.sunrise);
-                $("#sys_sunset1").append(data.sys.sunset);
-                $("#wind_deg1").append(data.wind.deg);
-                $("#wind_speed1").append(data.wind.speed);
-                $("#clouds1").append(data.clouds.all);
+                $("#name").append(data.name);
+                $("#main_temp").append(data.main.temp);
+                $("#main_temp_max").append(data.main.temp_max);
+                $("#main_temp_min").append(data.main.temp_min);
+                $("#humidity").append(data.main.humidity);
+                $("#sys_country").append(data.sys.country);
+                $("#sys_sunrise").append(data.sys.sunrise);
+                $("#sys_sunset").append(data.sys.sunset);
+                $("#wind_deg").append(data.wind.deg);
+                $("#wind_speed").append(data.wind.speed);
+                $("#clouds").append(data.clouds.all);
                       })         
            .fail((xhr, status, err)=>{
                     console.log("error")
@@ -155,8 +159,14 @@
     $(()=>{
             
             loadweather();
-            $("#search").click(searchweather);
-            $("#reset").click(reset);  
+           
+            $("#search").click(()=>{
+              $("span").hide();
+            })
+             searchweather();
+            
+
+          //  $("#reset").click(reset);  
      });
    </script>        
   </body>
