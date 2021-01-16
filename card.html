@@ -17,13 +17,7 @@
       margin-top: 35px;
       margin-bottom: 35px;
     }
-    .search_weather {
-      background-color :rgb(228, 234, 255);
-      box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
-      width: 35%;
-      float: right;
-      margin-top: 35px;
-    }
+    
     .card:hover {
       box-shadow: 0 8px 16px 0 rgba(156, 171, 255, 0.2);
     }
@@ -37,7 +31,7 @@
       padding-left: 23px;
       padding-bottom: 5px;
     }
-    .dataweather1{
+    .searchdataweather{
       padding-left: 23px;
     }
     h3{
@@ -56,9 +50,9 @@
           <button id="search" class="btn btn-primary">Search</button>
           <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="map" style="width:100%">
               <h3>Weather my home</h3>
-              <div class="dataweather">      
-              <p>Name: <span id="name"></span></p>
-              <p>Country: <span id="sys_country"></span></p>
+            <div class="dataweather">      
+              <span id="name"> Name1: </span><br>
+              <span id="sys_country">Country: </span><br>
               <span id="main_temp">Temp: </span> Celsius<br>
               <span id="main_temp_max">Temp max: </span> Celsius<br>
               <span id="main_temp_min">Temp min: </span> Celsius<br>
@@ -69,36 +63,25 @@
               <span id="wind_speed">Wind speed: </span> m/s<br>
               <span id="clouds">Cloud: </span> %<br>
             </div>
+            <div class="searchdataweather">
+              <span id="name1"> Name: </span><br>
+              <span id="sys_country1">Country: </span><br>
+              <span id="main_temp1">Temp: </span> Celsius<br>
+              <span id="main_temp_max1">Temp max: </span> Celsius<br>
+              <span id="main_temp_min1">Temp min: </span> Celsius<br>
+              <span id="humidity1">Humidity: </span> %<br>
+              <span id="sys_sunrise1">Sunrise: </span> unix<br>
+              <span id="sys_sunset1">Sunset: </span> unix<br>
+              <span id="wind_deg1">Wind deg: </span> degree<br>
+              <span id="wind_speed1">Wind speed: </span> m/s<br>
+              <span id="clouds1">Cloud: </span> %<br>
+            </div>
          </div>
     </div>  
-   <!--   <div class="search_weather" >
-        <h2><b><center>Search weather</center></b></h2>
-                <input type="text" id="la" placeholder="lat" size="13" style="margin-left: 10px; margin-bottom: 15px;">
-                <input type="text" id="lo" placeholder="lon" size="13" style="margin-left: 10px; margin-right: 10px;" >
-                <button id="search" class="btn-lm btn-primary" style="width: 60px; margin-right: 5px;">Search</button>
-                <button id="reset" class="btn-lm btn-danger" style="width: 60px;">Reset</button>
-        <img src="https://store-images.s-microsoft.com/image/apps.12957.14298299359319137.e613e659-a3fd-4321-897d-c7e23e9e70b6.052b26ed-8e69-44af-868f-e6f446897446?mode=scale&q=90&h=1080&w=1920" alt="map" style="width:100%">
-               
-              
-              <h3>Weather</h3>
-              <div class="dataweather1">
-                  <span id="name1">Name: </span><br>
-                  <span id="sys_country1">Country: </span><br>
-                  <span id="main_temp1">Temp: </span> Celsius<br>
-                  <span id="main_temp_max1">Temp max: </span> Celsius<br>
-                  <span id="main_temp_min1">Temp min: </span> Celsius<br>
-                  <span id="humidity1">Humidity: </span> %<br>
-                  <span id="sys_sunrise1">Sunrise: </span> unix<br>
-                  <span id="sys_sunset1">Sunset: </span> unix<br>
-                  <span id="wind_deg1">Wind deg: </span> degree<br>
-                  <span id="wind_speed1">Wind speed: </span> m/s<br>
-                  <span id="clouds1">Cloud: </span> %<br><br>
-              </div>
-      </div> -->     
-  
           
  <script> 
    function loadweather(){ 
+     $(".searchdataweather").hide();
      var url ="http://api.openweathermap.org/data/2.5/weather?lat=7.376078&lon=99.743488&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric";
      
            $.getJSON(url)
@@ -119,10 +102,12 @@
            .fail((xhr, status, err)=>{
                     console.log("error")
                 });
+                 
           }
    
    function searchweather(){ 
-     
+           $(".dataweather").hide();
+           $(".searchdataweather").show();
            var url ="http://api.openweathermap.org";
            var a = $("#la").val();
            var b = $("#lo").val();
@@ -132,17 +117,17 @@
             $.getJSON(url)
             .done((data)=>{
               console.log(data)
-                $("#name").append(data.name);
-                $("#main_temp").append(data.main.temp);
-                $("#main_temp_max").append(data.main.temp_max);
-                $("#main_temp_min").append(data.main.temp_min);
-                $("#humidity").append(data.main.humidity);
-                $("#sys_country").append(data.sys.country);
-                $("#sys_sunrise").append(data.sys.sunrise);
-                $("#sys_sunset").append(data.sys.sunset);
-                $("#wind_deg").append(data.wind.deg);
-                $("#wind_speed").append(data.wind.speed);
-                $("#clouds").append(data.clouds.all);
+                $("#name1").append(data.name);
+                $("#main_temp1").append(data.main.temp);
+                $("#main_temp_max1").append(data.main.temp_max);
+                $("#main_temp_min1").append(data.main.temp_min);
+                $("#humidity1").append(data.main.humidity);
+                $("#sys_country1").append(data.sys.country);
+                $("#sys_sunrise1").append(data.sys.sunrise);
+                $("#sys_sunset1").append(data.sys.sunset);
+                $("#wind_deg1").append(data.wind.deg);
+                $("#wind_speed1").append(data.wind.speed);
+                $("#clouds1").append(data.clouds.all);
                       })         
            .fail((xhr, status, err)=>{
                     console.log("error")
@@ -154,19 +139,14 @@
              $("#lo").val("");   
              location.reload();
     }
-       
     
     $(()=>{
             
             loadweather();
-           
-            $("#search").click(()=>{
-              $("span").hide();
+            $("#search").click(()=>{ 
+               searchweather();
             })
-             searchweather();
-            
-
-          //  $("#reset").click(reset);  
+          
      });
    </script>        
   </body>
