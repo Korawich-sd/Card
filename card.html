@@ -10,16 +10,19 @@
 </head>
 <style>
     .card {
-      background-color :rgb(251, 255, 255);
-      box-shadow: 0 4px 8px 0 rgba(99, 96, 255, 0.2);
-      width: 45%;
+      background-color :rgb(228, 234, 255);
+      box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
+      width: 38%;
       float: left;
+      margin-top: 35px;
+      margin-bottom: 35px;
     }
     .search_weather {
-      background-color :rgb(251, 255, 255);
-      box-shadow: 0 4px 8px 0 rgba(99, 96, 255, 0.2);
-      width: 45%;
+      background-color :rgb(228, 234, 255);
+      box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
+      width: 38%;
       float: right;
+      margin-top: 35px;
     }
     .card:hover {
       box-shadow: 0 8px 16px 0 rgba(156, 171, 255, 0.2);
@@ -30,8 +33,12 @@
     .container {
       padding: 2px 16px;
     }
-    span{
-      padding-left: 20px;
+    .dataweather{
+      padding-left: 23px;
+      padding-bottom: 5px;
+    }
+    .dataweather1{
+      padding-left: 23px;
     }
     h3{
       padding-left: 20px;
@@ -46,40 +53,42 @@
           <h2><b><center>Card</center></b></h2>
             <img src="https://imganuncios.mitula.net/k_hay_thi_din_n_makxk_h_en_x_khwnk_hnun_5070035606741583667.jpg" alt="Avatar" style="width:100%">
               <h3>Weather my home</h3>
-              <span id="name">Name: </span>
-              <span id="sys_country">Country: </span>
-              <span id="main_temp">Temp: </span>
-              <span id="main_temp_max">Temp max: </span>
-              <span id="main_temp_min">Temp min: </span>
-              <span id="humidity">Humidity: </span>
-              <span id="sys_sunrise">Sunrise: </span>
-              <span id="sys_sunset">Sunset: </span>
-              <span id="wind_deg">Wind deg: </span>
-              <span id="wind_speed">Wind speed: </span>
-              <span id="clouds">Cloud: </span>
+              <div class="dataweather">      
+              <span id="name">Name: </span><br>
+              <span id="sys_country">Country: </span><br>
+              <span id="main_temp">Temp: </span> Celsius<br>
+              <span id="main_temp_max">Temp max: </span> Celsius<br>
+              <span id="main_temp_min">Temp min: </span> Celsius<br>
+              <span id="humidity">Humidity: </span> %<br>
+              <span id="sys_sunrise">Sunrise: </span><br>
+              <span id="sys_sunset">Sunset: </span><br>
+              <span id="wind_deg">Wind deg: </span> degree<br>
+              <span id="wind_speed">Wind speed: </span> m/s<br>
+              <span id="clouds">Cloud: </span> %<br>
+            </div>
          </div>
    
       <div class="search_weather" >
         <h2><b><center>Search weather</center></b></h2>
            <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="Avatar" style="width:100%">
-                <input type="text" id="la" placeholder="lat" size="20" style="margin-top: 15px; margin-left: 15px;">
-                <input type="text" id="lo" placeholder="lon" size="20" >
-                <button id="search" class="btn-lm btn-primary" style="width: 85px;">Search</button>
-                <button id="reset" class="btn-lm btn-danger" style="width: 85px;">Reset</button>
+                <input type="text" id="la" placeholder="lat" size="15" style="margin-top: 15px; margin-left: 15px;">
+                <input type="text" id="lo" placeholder="lon" size="15" >
+                <button id="search" class="btn-lm btn-primary" style="width: 75px;">Search</button>
+                <button id="reset" class="btn-lm btn-danger" style="width: 75px;">Reset</button>
               
               <h3>Weather</h3>
-              <div id="dataweather">
+              <div class="dataweather1">
                   <span id="name1">Name: </span><br>
                   <span id="sys_country1">Country: </span><br>
-                  <span id="main_temp1">Temp: </span><br>
-                  <span id="main_temp_max1">Temp max: </span><br>
-                  <span id="main_temp_min1">Temp min: </span><br>
-                  <span id="humidity1">Humidity: </span><br>
+                  <span id="main_temp1">Temp: </span> Celsius<br>
+                  <span id="main_temp_max1">Temp max: </span> Celsius<br>
+                  <span id="main_temp_min1">Temp min: </span> Celsius<br>
+                  <span id="humidity1">Humidity: </span> %<br>
                   <span id="sys_sunrise1">Sunrise: </span><br>
                   <span id="sys_sunset1">Sunset: </span><br>
-                  <span id="wind_deg1">Wind deg: </span><br>
-                  <span id="wind_speed1">Wind speed: </span><br>
-                  <span id="clouds1">Cloud: </span><br><br>
+                  <span id="wind_deg1">Wind deg: </span> degree<br>
+                  <span id="wind_speed1">Wind speed: </span> m/s<br>
+                  <span id="clouds1">Cloud: </span> %<br><br>
               </div>
       </div>      
   </div>   
@@ -142,6 +151,7 @@
        
     
     $(()=>{
+            
             loadweather();
             $("#search").click(searchweather);
             $("#reset").click(reset);  
