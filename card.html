@@ -12,7 +12,7 @@
     .card {
       background-color :rgb(228, 234, 255);
       box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
-      width: 38%;
+      width: 35%;
       float: left;
       margin-top: 35px;
       margin-bottom: 35px;
@@ -20,7 +20,7 @@
     .search_weather {
       background-color :rgb(228, 234, 255);
       box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
-      width: 38%;
+      width: 35%;
       float: right;
       margin-top: 35px;
     }
@@ -51,7 +51,7 @@
   <div class="container">  
          <div class="card">
           <h2><b><center>Card</center></b></h2>
-            <img src="https://imganuncios.mitula.net/k_hay_thi_din_n_makxk_h_en_x_khwnk_hnun_5070035606741583667.jpg" alt="Avatar" style="width:100%">
+          <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="map" style="width:100%">
               <h3>Weather my home</h3>
               <div class="dataweather">      
               <span id="name">Name: </span><br>
@@ -70,11 +70,12 @@
    
       <div class="search_weather" >
         <h2><b><center>Search weather</center></b></h2>
-           <img src="https://www.google.com/maps/vt/data=9ghSZ8nErj8ZpLa62QmQs4wma7hgLd3CKhIr-1RChIP1h2PNolqU-BC8nyMJuyEZ9_soozmqdsiMBCgbE29yag9ZRnyt1iZIqZgXj6_O-DSdeUNNibf27fYMHIygbd4272ikRvwnwH7BQPiTmEC9rkyZW7g0N0vopaGL9jK8iRg" alt="Avatar" style="width:100%">
-                <input type="text" id="la" placeholder="lat" size="15" style="margin-top: 15px; margin-left: 15px;">
-                <input type="text" id="lo" placeholder="lon" size="15" >
-                <button id="search" class="btn-lm btn-primary" style="width: 75px;">Search</button>
-                <button id="reset" class="btn-lm btn-danger" style="width: 75px;">Reset</button>
+                <input type="text" id="la" placeholder="lat" size="13" style="margin-left: 10px; margin-bottom: 15px;">
+                <input type="text" id="lo" placeholder="lon" size="13" style="margin-left: 10px; margin-right: 10px;" >
+                <button id="search" class="btn-lm btn-primary" style="width: 60px; margin-right: 5px;">Search</button>
+                <button id="reset" class="btn-lm btn-danger" style="width: 60px;">Reset</button>
+        <img src="https://store-images.s-microsoft.com/image/apps.12957.14298299359319137.e613e659-a3fd-4321-897d-c7e23e9e70b6.052b26ed-8e69-44af-868f-e6f446897446?mode=scale&q=90&h=1080&w=1920" alt="map" style="width:100%">
+               
               
               <h3>Weather</h3>
               <div class="dataweather1">
@@ -96,6 +97,7 @@
  <script> 
    function loadweather(){ 
      var url ="http://api.openweathermap.org/data/2.5/weather?lat=7.376078&lon=99.743488&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric";
+     
            $.getJSON(url)
             .done((data)=>{
               console.log(data)
@@ -115,7 +117,7 @@
                     console.log("error")
                 });
           }
-            
+   
    function searchweather(){ 
            var url ="http://api.openweathermap.org";
            var a = $("#la").val();
