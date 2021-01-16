@@ -12,7 +12,7 @@
     .card {
       background-color :rgb(228, 234, 255);
       box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
-      width: 35%;
+      width: 40%;
       margin: auto;
       margin-top: 20px;
     }
@@ -33,6 +33,11 @@
       padding-left: 20px;
       padding-top: 15px;
     }
+    .row{
+      margin-left: 10px;
+      border-radius: 8px; 
+      width: 150px;
+    }
     </style>
 
 <body>
@@ -40,12 +45,14 @@
   <div class="container">  
          <div class="card">
           <h2><b><center>Card</center></b></h2>
-          <input type="text" id="la" placeholder="Latitude" class="form-control" style="margin-bottom: 5px;">
-          <input type="text" id="lo" placeholder="Longitude" class="form-control" style="margin-bottom: 5px;">
-          <button id="search" class="btn btn-primary" style="margin-bottom: 5px;">Search</button>
         
           <img src="https://store-images.s-microsoft.com/image/apps.12957.14298299359319137.e613e659-a3fd-4321-897d-c7e23e9e70b6.052b26ed-8e69-44af-868f-e6f446897446?mode=scale&q=90&h=1080&w=1920" alt="map" style="width:100%">
-              <h3>Weather</h3>
+            <div class="row">
+          <input type="text" id="la" placeholder="Latitude" class="form-control" >
+          <input type="text" id="lo" placeholder="Longitude" class="form-control">
+          <button id="search" class="btn btn-primary" style="margin-bottom: 5px;">Search</button>
+        </div>
+          <h3>Weather</h3>
             <div class="dataweather">      
               <span id="name"> Name: </span><br>
               <span id="sys_country">Country: </span><br>
