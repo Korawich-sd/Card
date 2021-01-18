@@ -39,7 +39,7 @@
    
   <div class="container">  
          <div class="card">
-          <h1><b><center>Check Weather Card</center></b></h1>
+          <h2><b><center>Check Weather Card</center></b></h2>
         
     <img src="https://store-images.s-microsoft.com/image/apps.12957.14298299359319137.e613e659-a3fd-4321-897d-c7e23e9e70b6.052b26ed-8e69-44af-868f-e6f446897446?mode=scale&q=90&h=1080&w=1920" alt="map" style="width:100%">
         <div class="row">
