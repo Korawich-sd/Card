@@ -10,9 +10,9 @@
 </head>
 <style>
     .card {
-      background-color :rgb(245, 226, 255);
+      background-color :rgb(250, 245, 253);
       box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
-      width: 40%;
+      width: 45%;
       margin: auto;
       margin-top: 20px;
       padding-bottom: 10px;
