@@ -12,9 +12,10 @@
     .card {
       background-color :rgb(250, 245, 253);
       box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
-      width: 45%;
+      width: 40%;
       margin: auto;
       margin-top: 20px;
+      margin-bottom: 20px;
       padding-bottom: 10px;
     }
     .card:hover {
@@ -39,49 +40,49 @@
    
   <div class="container">  
          <div class="card">
-          <h2><b><center>Check Weather Card</center></b></h2>
+          <h3><b><center>เช็คสภาพอากาศบ้านของคุณที่นี่</center></b></h3>
         
-    <img src="https://store-images.s-microsoft.com/image/apps.12957.14298299359319137.e613e659-a3fd-4321-897d-c7e23e9e70b6.052b26ed-8e69-44af-868f-e6f446897446?mode=scale&q=90&h=1080&w=1920" alt="map" style="width:100%">
+    <img src="https://www.thaihometown.com/photo/image_file44/1208630/1208630-1.jpg" alt="map" style="width: 100%;" >
         <div class="row">
-          <input type="text" id="la" placeholder="Latitude" class="form-control" style="width: 150px; margin-left: 25px; margin-top: 20px;" >
-          <input type="text" id="lo" placeholder="Longitude" class="form-control" style="width: 150px;margin-left: 20px;  margin-top: 20px; ">
+          <input type="text" id="la" placeholder="7.376078" class="form-control" style="width: 150px; margin-left: 25px; margin-top: 20px;" >
+          <input type="text" id="lo" placeholder="99.743488" class="form-control" style="width: 150px;margin-left: 20px;  margin-top: 20px; ">
           <button id="load" class="btn btn-primary btn-sm" style=" width: 140px; margin-left: 20px; margin-top: 20px;"><b>Load</b></button>
         </div>
          
             <div class="dataweather">      
-            <h3>Weather<span id="name"> at </span><br> </h3>
-                <span id="sys_country">Country: </span><br>
-                <span id="main_temp">Temp: </span> Celsius<br>
-                <span id="main_temp_max">Temp max: </span> Celsius<br>
-                <span id="main_temp_min">Temp min: </span> Celsius<br>
-                <span id="humidity">Humidity: </span> %<br>
-                <span id="sys_sunrise">Sunrise: </span> unix<br>
-                <span id="sys_sunset">Sunset: </span> unix<br>
-                <span id="wind_deg">Wind deg: </span> degree<br>
-                <span id="wind_speed">Wind speed: </span> m/s<br>
-                <span id="clouds">Cloud: </span> %<br>
+            <h3>สภาพอากาศ<span id="name"> ที่ </span><br> </h3>
+                <span id="sys_country">ประเทศ: </span><br>
+                <span id="main_temp">อุณหภูมิ: </span> เซลเซียส<br>
+                <span id="main_temp_max">อุณหภูมิสูงสุด: </span> เซลเซียส<br>
+                <span id="main_temp_min">อุณหภูมิต่ำสุด: </span> เซลเซียส<br>
+                <span id="humidity">ความชื้น: </span> %<br>
+                <span id="sys_sunrise">พระอาทิตย์ขึ้น: </span> unix<br>
+                <span id="sys_sunset">พระอาทิตย์ตก: </span> unix<br>
+                <span id="wind_deg">ทิศทางลม: </span> องศา<br>
+                <span id="wind_speed">ความเร็วลม: </span> เมตร/วินาที<br>
+                <span id="clouds">เมฆ: </span> %<br>
+                
             </div>
             <div class="searchdataweather">
-              <h3>Weather at <span id="name1"> </span><br> </h3>
-              Country: <span id="sys_country1"> </span><br>
-              Temp: <span id="main_temp1"> </span> Celsius<br>
-              Temp max: <span id="main_temp_max1"> </span> Celsius<br>
-              Temp min: <span id="main_temp_min1"> </span> Celsius<br>
-              Humidity: <span id="humidity1"> </span> %<br>
-              Sunrise: <span id="sys_sunrise1"> </span> unix<br>
-              Sunset: <span id="sys_sunset1"> </span> unix<br>
-              Wind deg: <span id="wind_deg1"></span> degree<br>
-              Wind speed: <span id="wind_speed1"> </span> m/s<br>
-              Cloud: <span id="clouds1"> </span> %<br>
+              <h3>สภาพอากาศ ที่ <span id="name1"> </span><br> </h3>
+              ประเทศ: <span id="sys_country1"> </span><br>
+              อุณหภูมิ: <span id="main_temp1"> </span> เซลเซียส<br>
+              อุณหภูมิสูงสุด: <span id="main_temp_max1"> </span> เซลเซียส<br>
+              อุณหภูมิต่ำสุด: <span id="main_temp_min1"> </span> เซลเซียส<br>
+              ความชื้น: <span id="humidity1"> </span> %<br>
+              พระอาทิตย์ขึ้น: <span id="sys_sunrise1"> </span> unix<br>
+              พระอาทิตย์ตก: <span id="sys_sunset1"> </span> unix<br>
+              ทิศทางลม: <span id="wind_deg1"></span> องศา<br>
+              ความเร็วลม: <span id="wind_speed1"> </span> เมตร/วินาที<br>
+              เมฆ: <span id="clouds1"> </span> %<br>
             </div>
           </div>
          </div>
-    </div>  
-          
+    </div>          
  <script> 
    function loadweather(){ 
      $(".searchdataweather").hide();
-     var url ="https://api.openweathermap.org/data/2.5/weather?lat=7.376078&lon=99.743488&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric";
+     var url ="https://api.openweathermap.org/data/2.5/weather?lat=7.376078&lon=99.743488&lang=th&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric";
      
            $.getJSON(url)
             .done((data)=>{
@@ -97,21 +98,23 @@
                 $("#wind_deg").append(data.wind.deg);
                 $("#wind_speed").append(data.wind.speed);
                 $("#clouds").append(data.clouds.all);
+               
                       })         
            .fail((xhr, status, err)=>{
                     console.log("error")
                 });
                  
           }
-   
+ 
+
    function searchweather(){ 
            $(".dataweather").hide();
            $(".searchdataweather").show();
            var url ="https://api.openweathermap.org";
-           var a = $("#la").val();
-           var b = $("#lo").val();
+           var lat = $("#la").val();
+           var lon = $("#lo").val();
 
-           url = url + "/data/2.5/weather?lat=" + a + "&lon=" + b +"&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric"; 
+           url = url + "/data/2.5/weather?lat=" + lat + "&lon=" + lon +"&lang=th&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric"; 
            
             $.getJSON(url)
             .done((data)=>{
@@ -127,7 +130,6 @@
               $("#wind_deg1").append(data.wind.deg);
               $("#wind_speed1").append(data.wind.speed);
               $("#clouds1").append(data.clouds.all);
-
                       })         
            .fail((xhr, status, err)=>{
                     console.log("error")
@@ -146,8 +148,8 @@
          $("#wind_deg1").empty();
          $("#wind_speed1").empty();
          $("#clouds1").empty();
-
     }
+    
     $(()=>{ 
             loadweather();
             $("#load").click(()=>{ 
@@ -155,9 +157,8 @@
             });
             $("#load").click(()=>{
                 remove();
-            }); 
-            
+            });  
      });
-   </script>        
+   </script>  
   </body>
 </html>
