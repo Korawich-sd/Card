@@ -14,8 +14,8 @@
       box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
       width: 50%;
       margin: auto;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 3%;
+      margin-bottom: 3%;
       padding-bottom: 10px;
     }
     .card:hover {
@@ -38,42 +38,36 @@
 
 <body>
    
-  <div class="container"> 
-<input type="text" id="la" placeholder="Latitude" value="7.376078" class="form-control" style="width: 100%; margin-top: 2%;">
-          <input type="text" id="lo" placeholder="Longitude" value="99.743488" class="form-control" style="width: 100%; margin-top: 2%;">
-          <button id="load" class="btn btn-primary" style="width: 100%; margin-top: 2%;"><b>Load</b></button>
-         
-        <div class="card">
-          <h3><b><center>เช็คสภาพอากาศบ้านของคุณที่นี่</center></b></h3>
+  <div class="container">  
+     <div class="card">
+        <h3><b><center>เช็คสภาพอากาศบ้านของคุณที่นี่</center></b></h3>
            <img src="https://www.thaihometown.com/photo/image_file44/1208630/1208630-1.jpg" alt="map" style="width: 100%;" >
-          
-            <div class="dataweather">      
+              <input type="text" id="la" placeholder="Latitude" value="7.376078" class="form-control" style="width: 100%; margin-top: 2%;">
+              <input type="text" id="lo" placeholder="Longitude" value="99.743488" class="form-control" style="width: 100%; margin-top: 2%;">
+              <button id="load" class="btn btn-primary" style="width: 100%; margin-top: 2%;"><b>Load</b></button>
+         
+       <div class="dataweather">      
             <h3>สภาพอากาศ<span id="name"> ที่ </span><br> </h3>
                 <span id="sys_country">ประเทศ: </span><br>
                 <span id="main_temp">อุณหภูมิ: </span> เซลเซียส<br>
-                <span id="main_temp_max">อุณหภูมิสูงสุด: </span> เซลเซียส<br>
-                <span id="main_temp_min">อุณหภูมิต่ำสุด: </span> เซลเซียส<br>
                 <span id="humidity">ความชื้น: </span> %<br>
                 <span id="sys_sunrise">พระอาทิตย์ขึ้น: </span> unix<br>
                 <span id="sys_sunset">พระอาทิตย์ตก: </span> unix<br>
                 <span id="wind_deg">ทิศทางลม: </span> องศา<br>
                 <span id="wind_speed">ความเร็วลม: </span> เมตร/วินาที<br>
                 <span id="clouds">เมฆ: </span> %<br>  
-            </div>
-            <div class="searchdataweather">
+       </div>
+      <div class="searchdataweather">
               <h3>สภาพอากาศ ที่ <span id="name1"> </span><br> </h3>
               ประเทศ: <span id="sys_country1"> </span><br>
               อุณหภูมิ: <span id="main_temp1"> </span> เซลเซียส<br>
-              อุณหภูมิสูงสุด: <span id="main_temp_max1"> </span> เซลเซียส<br>
-              อุณหภูมิต่ำสุด: <span id="main_temp_min1"> </span> เซลเซียส<br>
               ความชื้น: <span id="humidity1"> </span> %<br>
               พระอาทิตย์ขึ้น: <span id="sys_sunrise1"> </span> unix<br>
               พระอาทิตย์ตก: <span id="sys_sunset1"> </span> unix<br>
               ทิศทางลม: <span id="wind_deg1"></span> องศา<br>
               ความเร็วลม: <span id="wind_speed1"> </span> เมตร/วินาที<br>
-              เมฆ: <span id="clouds1"> </span> %<br>
-                
-             </div>
+              เมฆ: <span id="clouds1"> </span> %<br>  
+       </div>
           </div>
          </div>
     </div>          
@@ -87,8 +81,6 @@
               console.log(data)
                 $("#name").append(data.name);
                 $("#main_temp").append(data.main.temp);
-                $("#main_temp_max").append(data.main.temp_max);
-                $("#main_temp_min").append(data.main.temp_min);
                 $("#humidity").append(data.main.humidity);
                 $("#sys_country").append(data.sys.country);
                 $("#sys_sunrise").append(data.sys.sunrise);
@@ -119,8 +111,6 @@
               console.log(data)
               $("#name1").append(data.name);
               $("#main_temp1").append(data.main.temp);
-              $("#main_temp_max1").append(data.main.temp_max);
-              $("#main_temp_min1").append(data.main.temp_min);
               $("#humidity1").append(data.main.humidity);
               $("#sys_country1").append(data.sys.country);
               $("#sys_sunrise1").append(data.sys.sunrise);
@@ -134,11 +124,9 @@
                 });
           }
          
-    function remove(){
+    function reset(){
          $("#name1").empty();
          $("#main_temp1").empty();
-         $("#main_temp_max1").empty();
-         $("#main_temp_min1").empty();
          $("#humidity1").empty();
          $("#sys_country1").empty();
          $("#sys_sunrise1").empty();
@@ -154,7 +142,7 @@
                searchweather();
             });
             $("#load").click(()=>{
-                remove();
+                reset();
             });  
      });
    </script>  
