@@ -43,9 +43,9 @@
           <h3><b><center>เช็คสภาพอากาศบ้านของคุณที่นี่</center></b></h3>
         
     <img src="https://www.thaihometown.com/photo/image_file44/1208630/1208630-1.jpg" alt="map" style="width: 100%;" >
-          <input type="text" id="la" placeholder="Latitude" class="form-control" style="width: 100%; " >
-          <input type="text" id="lo" placeholder="Longitude" class="form-control" style="width: 100%; ">
-          <button id="load" class="btn btn-primary btn-sm" style=" width: 100%;"><b>Load</b></button>
+          <input type="text" id="la" placeholder="Latitude" value="7.376078" class="form-control" style="width: 100%; margin-top: 2%;">
+          <input type="text" id="lo" placeholder="Longitude" value="99.743488" class="form-control" style="width: 100%; margin-top: 2%;">
+          <button id="load" class="btn btn-primary" style="width: 100%; margin-top: 2%;"><b>Load</b></button>
          
             <div class="dataweather">      
             <h3>สภาพอากาศ<span id="name"> ที่ </span><br> </h3>
@@ -149,7 +149,6 @@
     }
    
     $(()=>{ 
-
             loadweather();
             $("#load").click(()=>{ 
                searchweather();
