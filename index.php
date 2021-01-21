@@ -44,10 +44,10 @@
         
     <img src="https://www.thaihometown.com/photo/image_file44/1208630/1208630-1.jpg" alt="map" style="width: 100%;" >
         <div class="row">
-          <input type="text" id="la" placeholder="7.376078" class="form-control" style="width: 150px; margin-left: 25px; margin-top: 20px;" >
-          <input type="text" id="lo" placeholder="99.743488" class="form-control" style="width: 150px;margin-left: 20px;  margin-top: 20px; ">
-          <button id="load" class="btn btn-primary btn-sm" style=" width: 140px; margin-left: 20px; margin-top: 20px;"><b>Load</b></button>
-        </div>
+          <input type="text" id="la" placeholder="Latitude" class="form-control" style="width: 25%; margin-left: 25px; margin-top: 20px;" >
+          <input type="text" id="lo" placeholder="Longitude" class="form-control" style="width: 25%;margin-left: 20px;  margin-top: 20px; ">
+          <button id="load" class="btn btn-primary btn-sm" style=" width: 30%; margin-left: 20px; margin-top: 20px;"><b>Load</b></button>
+      
          
             <div class="dataweather">      
             <h3>สภาพอากาศ<span id="name"> ที่ </span><br> </h3>
@@ -60,8 +60,7 @@
                 <span id="sys_sunset">พระอาทิตย์ตก: </span> unix<br>
                 <span id="wind_deg">ทิศทางลม: </span> องศา<br>
                 <span id="wind_speed">ความเร็วลม: </span> เมตร/วินาที<br>
-                <span id="clouds">เมฆ: </span> %<br>
-                
+                <span id="clouds">เมฆ: </span> %<br>  
             </div>
             <div class="searchdataweather">
               <h3>สภาพอากาศ ที่ <span id="name1"> </span><br> </h3>
@@ -75,6 +74,7 @@
               ทิศทางลม: <span id="wind_deg1"></span> องศา<br>
               ความเร็วลม: <span id="wind_speed1"> </span> เมตร/วินาที<br>
               เมฆ: <span id="clouds1"> </span> %<br>
+            </div>
             </div>
           </div>
          </div>
@@ -149,8 +149,9 @@
          $("#wind_speed1").empty();
          $("#clouds1").empty();
     }
-    
+   
     $(()=>{ 
+
             loadweather();
             $("#load").click(()=>{ 
                searchweather();
