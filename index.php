@@ -12,7 +12,7 @@
     .card {
       background-color :rgb(250, 245, 253);
       box-shadow: 0 4px 8px 0 rgba(205, 96, 255, 0.2);
-      width: 40%;
+      width: 50%;
       margin: auto;
       margin-top: 20px;
       margin-bottom: 20px;
@@ -43,11 +43,9 @@
           <h3><b><center>เช็คสภาพอากาศบ้านของคุณที่นี่</center></b></h3>
         
     <img src="https://www.thaihometown.com/photo/image_file44/1208630/1208630-1.jpg" alt="map" style="width: 100%;" >
-        <div class="row">
-          <input type="text" id="la" placeholder="Latitude" class="form-control" style="width: 25%; margin-left: 25px; margin-top: 20px;" >
-          <input type="text" id="lo" placeholder="Longitude" class="form-control" style="width: 25%;margin-left: 20px;  margin-top: 20px; ">
-          <button id="load" class="btn btn-primary btn-sm" style=" width: 30%; margin-left: 20px; margin-top: 20px;"><b>Load</b></button>
-      
+          <input type="text" id="la" placeholder="Latitude" class="form-control" style="width: 100%; " >
+          <input type="text" id="lo" placeholder="Longitude" class="form-control" style="width: 100%; ">
+          <button id="load" class="btn btn-primary btn-sm" style=" width: 100%;"><b>Load</b></button>
          
             <div class="dataweather">      
             <h3>สภาพอากาศ<span id="name"> ที่ </span><br> </h3>
@@ -74,8 +72,8 @@
               ทิศทางลม: <span id="wind_deg1"></span> องศา<br>
               ความเร็วลม: <span id="wind_speed1"> </span> เมตร/วินาที<br>
               เมฆ: <span id="clouds1"> </span> %<br>
-            </div>
-            </div>
+                
+             </div>
           </div>
          </div>
     </div>          
