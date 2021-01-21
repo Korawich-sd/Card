@@ -16,7 +16,7 @@
       margin: auto;
       margin-top: 3%;
       margin-bottom: 3%;
-      padding-bottom: 10px;
+      padding-bottom: 2%;
     }
     .card:hover {
       box-shadow: 0 8px 16px 0 rgba(156, 171, 255, 0.2);
@@ -40,7 +40,7 @@
    
   <div class="container">  
      <div class="card">
-        <h3><b><center>เช็คสภาพอากาศบ้านของคุณที่นี่</center></b></h3>
+        <h3><b><center>เช็คสภาพอากาศที่นี่</center></b></h3>
            <img src="https://www.thaihometown.com/photo/image_file44/1208630/1208630-1.jpg" alt="map" style="width: 100%;" >
               <input type="text" id="la" placeholder="Latitude" value="7.376078" class="form-control" style="width: 100%; margin-top: 2%;">
               <input type="text" id="lo" placeholder="Longitude" value="99.743488" class="form-control" style="width: 100%; margin-top: 2%;">
