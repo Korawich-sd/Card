@@ -84,7 +84,7 @@
  <script> 
    function loadweather(){ 
      $(".searchdataweather").hide();
-     var url ="https://api.openweathermap.org/data/2.5/weather?lat=7.376078&lon=99.743488&lang=th&appid=a28d46fac268c82a0dc8eabda7fd2b94&units=metric";
+     var url ="http://localhost/ITD62-276/project/CES/index.php/studentAPI";
      
            $.getJSON(url)
             .done((data)=>{
