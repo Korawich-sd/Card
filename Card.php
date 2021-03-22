@@ -90,7 +90,7 @@
             .done((data)=>{
               console.log(data)
                 $("#name").append(data.name);
-                $("#main_temp").append(data.main.temp);
+                $("#main_temp").append(image-li);
                 $("#main_temp_max").append(data.main.temp_max);
                 $("#main_temp_min").append(data.main.temp_min);
                 $("#humidity").append(data.main.humidity);
